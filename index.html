@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Заявка на разработку — PixelForge</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="page">
+    <form id="requestForm" class="form" novalidate>
+      <header class="form__header">
+        <h1 class="form__title">Заявка на разработку</h1>
+        <p class="form__subtitle">Веб-студия «PixelForge»</p>
+      </header>
+
+      <section class="section">
+        <div class="section__head">
+          <h2 class="section__title">👤 О заказчике</h2>
+          <button type="button" id="fillRandomBtn" class="random-btn">🎲 Заполнить рандомно</button>
+        </div>
+
+        <div class="grid">
+          <div class="field">
+            <label for="firstName">Имя <span class="req">*</span></label>
+            <input type="text" id="firstName" name="firstName" placeholder="Ваше имя" autocomplete="given-name">
+            <span class="error" id="firstNameError"></span>
+          </div>
+          <div class="field">
+            <label for="lastName">Фамилия <span class="req">*</span></label>
+            <input type="text" id="lastName" name="lastName" placeholder="Ваша фамилия" autocomplete="family-name">
+            <span class="error" id="lastNameError"></span>
+          </div>
+
+          <div class="field">
+            <label for="email">Email <span class="req">*</span></label>
+            <input type="email" id="email" name="email" placeholder="name@company.com" autocomplete="email">
+            <span class="error" id="emailError"></span>
+          </div>
+          <div class="field">
+            <label for="phone">Телефон <span class="req">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="+998 __ ___ __ __" autocomplete="tel" inputmode="tel">
+            <span class="error" id="phoneError"></span>
+          </div>
+
+          <div class="field">
+            <label for="company">Компания</label>
+            <input type="text" id="company" name="company" placeholder="Название компании" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="position">Должность</label>
+            <input type="text" id="position" name="position" placeholder="CEO, Marketing Manager, ..." autocomplete="organization-title">
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section__head">
+          <h2 class="section__title">💼 О проекте</h2>
+        </div>
+
+        <div class="grid">
+          <div class="field field--full">
+            <label for="service">Тип услуги <span class="req">*</span></label>
+            <select id="service" name="service">
+              <option value="" selected>— выберите услугу —</option>
+              <option value="Лендинг">Лендинг</option>
+              <option value="Корпоративный сайт">Корпоративный сайт</option>
+              <option value="Интернет-магазин">Интернет-магазин</option>
+              <option value="Веб-приложение">Веб-приложение</option>
+              <option value="Мобильное приложение">Мобильное приложение</option>
+              <option value="Дизайн (лого/брендинг)">Дизайн (лого/брендинг)</option>
+            </select>
+            <span class="error" id="serviceError"></span>
+          </div>
+
+          <div class="field">
+            <label for="budget">Бюджет <span class="req">*</span></label>
+            <select id="budget" name="budget">
+              <option value="" selected>— выберите диапазон —</option>
+              <option value="до 1000$">до 1000$</option>
+              <option value="1000-5000$">1000-5000$</option>
+              <option value="5000-10000$">5000-10000$</option>
+              <option value="10000-25000$">10000-25000$</option>
+              <option value="свыше 25000$">свыше 25000$</option>
+            </select>
+            <span class="error" id="budgetError"></span>
+          </div>
+          <div class="field">
+            <label for="deadline">Срок <span class="req">*</span></label>
+            <select id="deadline" name="deadline">
+              <option value="" selected>— выберите срок —</option>
+              <option value="до 2 недель">до 2 недель</option>
+              <option value="1 месяц">1 месяц</option>
+              <option value="1-2 месяца">1-2 месяца</option>
+              <option value="3+ месяцев">3+ месяцев</option>
+              <option value="не срочно">не срочно</option>
+            </select>
+            <span class="error" id="deadlineError"></span>
+          </div>
+
+          <div class="field">
+            <label for="launchDate">Желаемая дата запуска</label>
+            <input type="date" id="launchDate" name="launchDate">
+          </div>
+          <div class="field">
+            <label for="pagesCount">Количество страниц</label>
+            <input type="number" id="pagesCount" name="pagesCount" min="1" max="100" placeholder="Например: 5">
+            <span class="error" id="pagesCountError"></span>
+          </div>
+
+          <div class="field field--full">
+            <label for="description">Описание проекта <span class="req">*</span></label>
+            <textarea id="description" name="description" rows="5" placeholder="Расскажите о целях, аудитории, референсах... (мин. 30 символов)"></textarea>
+            <span class="error" id="descriptionError"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section__head">
+          <h2 class="section__title">□ Прочее</h2>
+        </div>
+
+        <div class="grid">
+          <div class="field field--full">
+            <label for="website">Ссылка на текущий сайт (если есть)</label>
+            <input type="url" id="website" name="website" placeholder="https://example.com" autocomplete="url">
+            <span class="error" id="websiteError"></span>
+          </div>
+
+          <div class="field">
+            <label for="source">Как о нас узнали?</label>
+            <select id="source" name="source">
+              <option value="Instagram" selected>Instagram</option>
+              <option value="Telegram">Telegram</option>
+              <option value="Google">Google</option>
+              <option value="Рекомендация друзей">Рекомендация друзей</option>
+              <option value="Другое">Другое</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="contactMethod">Способ связи</label>
+            <select id="contactMethod" name="contactMethod">
+              <option value="Telegram" selected>Telegram</option>
+              <option value="WhatsApp">WhatsApp</option>
+              <option value="Email">Email</option>
+              <option value="Телефон">Телефон</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <button type="submit" id="submitBtn" class="submit-btn">Отправить заявку</button>
+    </form>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
